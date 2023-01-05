@@ -1,0 +1,47 @@
+  ADDR B1 B2 B3 B4 thrass11.tmp                                     PAGE       1
+
+                    org $8000
+
+  8000 86 0A        ldaa #$a
+  8002 B7 81 00     staa $8100
+  8005 86 0B        ldaa #$b
+  8007 B7 81 01     staa $8101
+  800A 86 0C        ldaa #$c
+  800C B7 81 02     staa $8102
+
+  800F B6 81 00     ldaa $8100
+  8012 F6 81 01     ldab $8101
+
+  8015 3D           mul
+
+  8016 FD 81 03     std $8103   // result fir mul
+
+  8019 B6 81 02     ldaa $8102
+
+  801C 3D           mul
+
+  801D FD 81 05     std $8105
+
+  8020 B6 81 02     ldaa $8102
+  8023 F6 81 03     ldab $8103
+
+  8026 3D           mul
+
+  8027 FD 81 07     std $8107
+  802A B6 81 08     ldaa $8108
+  802D BB 81 05     adda $8105
+  8030 F6 81 06     ldab $8106
+
+
+
+
+
+
+
+
+
+
+
+
+
+

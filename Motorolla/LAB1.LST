@@ -1,0 +1,26 @@
+  ADDR B1 B2 B3 B4 thrass11.tmp                                     PAGE       1
+
+  C000 86 22        ldaa #34
+  C002 C6 34        ldab #$34
+  C004 11           cba
+  C005 2B 04        bmi p2
+
+  C007 27 06        beq p3
+
+  C009 20 06        bra done
+
+  C00B 86 2D       p2 ldaa #45
+  C00D 20 02        bra done
+
+  C00F 86 23       p3 ldaa #$23
+
+
+  C011 5F          done clrb
+
+
+
+  Symbol Table 
+
+  DONE               C011
+  P2                 C00B
+  P3                 C00F

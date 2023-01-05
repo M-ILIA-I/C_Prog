@@ -1,0 +1,23 @@
+  ADDR B1 B2 B3 B4 thrass11.tmp                                     PAGE       1
+
+                    org $8000
+
+  8000 86 00        ldaa #0
+  8002 C6 FF        ldab #$ff
+  8004 CE 82 00     ldx #$8200
+
+                   loop
+  8007 1F 00 01 01  brclr 0,x,#$01 skipincrease
+  800B 4C           inca
+  800C 08          skipincrease inx
+  800D 5A           decb
+  800E 26 F7        bne loop
+
+  8010 36          end psha
+  8011 20 FE        bra *
+
+  Symbol Table 
+
+  END                8010
+  SKIPINCREASE       800C
+  LOOP               8007
